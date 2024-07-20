@@ -14,6 +14,18 @@ template<>        inline Print& operator <<(Print &obj, float arg) { obj.print(a
 ODriveUART::ODriveUART(Stream& serial)
     : serial_(serial) {}
 
+void ODriveUART::saveConfig() {
+    serial_ << "ss\n";
+}
+
+void ODriveUART::eraseConfig() {
+    serial_ << "se\n";
+}
+
+void ODriveUART::reboot() {
+    serial_ << "sr\n";
+}
+
 void ODriveUART::clearErrors() {
     serial_ << F("sc\n");
 }
