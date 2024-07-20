@@ -19,6 +19,21 @@ public:
     ODriveUART(Stream& serial);
 
     /**
+     * @brief Save the configuration.
+     */
+    void saveConfig();
+
+    /**
+     * @brief Erase the configuration.
+     */
+    void eraseConfig();
+
+    /**
+     * @brief Reboots the ODrive.
+     */
+    void reboot();
+
+    /**
      * @brief Clears the error status of the ODrive and restarts the brake
      * resistor if it was disabled due to an error.
      */
